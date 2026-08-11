@@ -1,3 +1,5 @@
+import socket
+
 from fastapi import FastAPI, HTTPException
 from models import Student, Teacher, Course
 from data_interface import Data
@@ -9,6 +11,14 @@ data = Data()
 @app.get("/")
 def health_check():
     return {"message": "API healthy and ready"}
+
+
+@app.get("/who")
+def whoami():
+    container_id = socket.gethostname()
+    return {"message": "Successful !!", "result": {
+        "container_id": container_id
+    }}
 
 
 @app.get("/student/all")
