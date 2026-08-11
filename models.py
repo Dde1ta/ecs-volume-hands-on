@@ -21,4 +21,4 @@ class Teacher(BaseModel):
 class Course(BaseModel):
     id: int = -1
     name: str = ""
-    entity: ClassVar[str] = "courses"
+    entity: ClassVar[str] = "course"
