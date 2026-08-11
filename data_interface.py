@@ -24,14 +24,17 @@ class Data:
 
         if not os.path.exists(os.path.join(self.data_location, f"student.json")):
             file = open(os.path.join(self.data_location, f"student.json"), 'w')
+            json.dump([], file)
             file.close()
 
         if not os.path.exists(os.path.join(self.data_location, f"course.json")):
             file = open(os.path.join(self.data_location, f"course.json"), 'w')
+            json.dump([], file)
             file.close()
 
         if not os.path.exists(os.path.join(self.data_location, f"teacher.json")):
             file = open(os.path.join(self.data_location, f"teacher.json"), 'w')
+            json.dump([], file)
             file.close()
 
     def get_all(self, model: Type[ModelType]) -> Tuple[ModelType, ...]:
